@@ -60,9 +60,6 @@ class Question(Updated):
     def __str__(self):
         return self.title
 
-
-
-
 class Answer(Updated):
     class Meta : 
         verbose_name = _("Answer")
@@ -72,6 +69,4 @@ class Answer(Updated):
     question = models.ForeignKey(Question , related_name="answer" , on_delete=models.DO_NOTHING)
     answer_text = models.CharField(max_length=255 , verbose_name= _("Answer Text"))
     is_right = models.BooleanField(default=False)
-
-
 
